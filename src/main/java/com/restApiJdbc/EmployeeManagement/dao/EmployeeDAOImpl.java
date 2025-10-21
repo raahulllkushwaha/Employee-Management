@@ -20,7 +20,7 @@ public class EmployeeDAOImpl implements EmployeeDAO{
 
     @Override
     public int update(Employee employee, int id) {
-        return 0;
+        return jdbcTemplate.update("UPDATE tbl_employees SET name=?, email=?, department=? WHERE id=?", new Object[]{employee.getName(), employee.getEmail(), employee.getDepartment(), id});
     }
 
     @Override

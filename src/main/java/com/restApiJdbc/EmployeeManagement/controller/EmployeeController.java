@@ -28,4 +28,9 @@ public class EmployeeController {
     public String saveEmployee(@RequestBody Employee employee){
         return eDAO.save(employee)+ " Number of rows saved to the database";
     }
+
+    @PutMapping("/employees/{id}")
+    public String updateEmployee(@RequestBody Employee employee, @PathVariable int id){
+        return eDAO.update(employee, id) + " Number of rows updated in the database";
+    }
 }
