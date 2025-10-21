@@ -33,4 +33,9 @@ public class EmployeeController {
     public String updateEmployee(@RequestBody Employee employee, @PathVariable int id){
         return eDAO.update(employee, id) + " Number of rows updated in the database";
     }
+
+    @DeleteMapping("/employees/{id}")
+    public String deleteEmployeeById(@PathVariable int id){
+        return eDAO.delete(id) + " Number of rows deleted from the database";
+    }
 }

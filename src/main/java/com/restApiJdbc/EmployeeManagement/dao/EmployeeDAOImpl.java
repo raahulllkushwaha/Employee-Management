@@ -25,7 +25,7 @@ public class EmployeeDAOImpl implements EmployeeDAO{
 
     @Override
     public int delete(int id) {
-        return 0;
+        return jdbcTemplate.update("DELETE FROM tbl_employees WHERE id=?", id);
     }
 
     @Override
