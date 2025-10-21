@@ -1,12 +1,11 @@
 package com.restApiJdbc.EmployeeManagement.controller;
 
 
+import com.restApiJdbc.EmployeeManagement.EmployeeManagementApplication;
 import com.restApiJdbc.EmployeeManagement.dao.EmployeeDAO;
 import com.restApiJdbc.EmployeeManagement.model.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -23,5 +22,10 @@ public class EmployeeController {
     @GetMapping("/employees/{id}")
     public Employee getEmployeeById(@PathVariable int id){
         return eDAO.getById(id);
+    }
+
+    @PostMapping("/employees")
+    public String saveEmployee(@RequestBody Employee employee){
+        return eDAO.save(employee)+ " Number of rows saved to the database";
     }
 }

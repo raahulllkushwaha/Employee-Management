@@ -15,7 +15,7 @@ public class EmployeeDAOImpl implements EmployeeDAO{
     JdbcTemplate jdbcTemplate;
     @Override
     public int save(Employee employee) {
-        return 0;
+        return jdbcTemplate.update("INSERT INTO tbl_employees (name, email, department) VALUES(?,?,?)", new Object[] {employee.getName(), employee.getEmail(), employee.getDepartment()});
     }
 
     @Override
