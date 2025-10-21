@@ -35,6 +35,6 @@ public class EmployeeDAOImpl implements EmployeeDAO{
 
     @Override
     public Employee getById(int id) {
-        return null;
+        return jdbcTemplate.queryForObject("SELECT * FROM tbl_employees WHERE  id=?", new BeanPropertyRowMapper<Employee>(Employee.class), id);
     }
 }
