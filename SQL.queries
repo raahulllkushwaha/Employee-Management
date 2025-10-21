@@ -1,0 +1,23 @@
+CREATE DATABASE springbootjdbc;
+USE springbootjdbc;
+
+CREATE TABLE tbl_employees
+(
+	id INT PRIMARY KEY auto_increment,
+    name VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    department VARCHAR(255) NOT NULL
+);
+
+INSERT INTO tbl_employees (name, email, department)
+VALUES ("Rahul", "raahullkushwaha@gmail.com", "IT");
+
+INSERT INTO tbl_employees (name, email, department)
+VALUES ("Abhishek", "aabhishek@gmail.com", "Marketing");
+
+INSERT INTO tbl_employees (name, email, department)
+VALUES ("Anuj", "anujj@gmail.com", "Sales");
+
+
+
+SELECT * FROM springbootjdbc.tbl_employees;
